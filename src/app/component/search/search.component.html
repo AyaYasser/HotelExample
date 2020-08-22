@@ -1,0 +1,66 @@
+
+<div class="container ">
+  <form id="search-hotel-form"  class="form-group"   (ngSubmit)="onSearchHotelSubmit($event)" >
+
+  <div class="card">
+    <div class="card-header hotel-header">
+           Search Hotel
+      </div>
+
+
+  <div class="hotel-card container row">
+    <div class="col-4">
+      <mat-form-field>
+        <mat-label>Check in</mat-label>
+        <input matInput [matDatepicker]="picker" (dateChange)="addCheckInEvent('change', $event)">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+    </div>
+    <div class="col-4">
+      <mat-form-field>
+        <mat-label>Check out</mat-label>
+        <input matInput [matDatepicker]="picker2" (dateChange)="addCheckOutEvent('change', $event)">
+      <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+        <mat-datepicker #picker2></mat-datepicker>
+      </mat-form-field>
+    </div>
+    <div class="col-4">
+      <input
+                        type="submit"
+                        name="Search"
+                        class="form-control btn btn-info btn-md "
+                        value="Search" >
+    </div>
+  </div>
+</div>
+</form>
+  <div class="row">
+    <div class="col-4">
+    Hello Left
+    </div>
+    <div class="col-8">
+      <div class="row">
+        <label class="hotel-label-color">Sorting </label>
+        <label>Displaying {{noFilterdHotels}} of {{noTotalHotels}} hotels. </label>
+      </div>
+    <div>
+    <div *ngFor='let hotel of hotelFilteredList'>
+      <br/>
+      <div class="card">
+        <div class="card-header  hotel-detail-card">
+               {{hotel.name}}
+          </div>
+          <div class=" container  ">
+             <label class="hotel-detail-card"> City  : {{hotel.city}}</label>
+             <br/>
+             <label class="hotel-detail-card">Price :  {{hotel.price}} USD</label>
+          </div>
+
+
+        </div>
+   </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,23 @@
+
+.example-events {
+  height: 200px;
+  border: 1px solid #555;
+  overflow: auto;
+}
+.hotel-header{
+  font-size: large;
+  text-align: center;
+}
+.hotel-card{
+  padding-top: 1.5rem;
+}
+.hotel-label-color{
+  color: #138496;
+  padding-right: 1rem;
+}
+
+.hotel-detail-card{
+  padding-top: 1.5rem;
+  padding-left: 2.5rem;
+
+}
